@@ -1,0 +1,3292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>疫情趋势展示</title>
+<script src="https://assets.pyecharts.org/assets/echarts.min.js" type="text/javascript"></script>
+<script src="https://assets.pyecharts.org/assets/themes/westeros.js" type="text/javascript"></script>
+</head>
+<body>
+<style>.box {  }; </style>
+<div class="box">
+<div class="chart-container" id="total_pie" style="width:605px;height:274px;position:absolute;top:0px;left:10px;"></div>
+<script>
+        var chart_total_pie = echarts.init(
+            document.getElementById('total_pie'), 'light', {renderer: 'canvas'});
+        var option_total_pie = {
+    "backgroundColor": "transparent",
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "series": [
+        {
+            "type": "pie",
+            "clockwise": true,
+            "data": [
+                {
+                    "name": "\u786e     \u8bca  ",
+                    "value": 125378
+                },
+                {
+                    "name": "\u6b7b     \u4ea1  ",
+                    "value": 5695
+                },
+                {
+                    "name": "\u6cbb     \u6108  ",
+                    "value": 117305
+                },
+                {
+                    "name": "\u7591     \u4f3c  ",
+                    "value": 1
+                }
+            ],
+            "radius": [
+                75,
+                100
+            ],
+            "center": [
+                "50%",
+                "60%"
+            ],
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "formatter": "{b}:{c}"
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        },
+        {
+            "type": "pie",
+            "clockwise": true,
+            "data": [
+                {
+                    "name": "\u65b0\u589e\u786e\u8bca",
+                    "value": 50
+                },
+                {
+                    "name": "\u65b0\u589e\u7591\u4f3c",
+                    "value": -1
+                },
+                {
+                    "name": "\u65b0\u589e\u6b7b\u4ea1",
+                    "value": 0
+                },
+                {
+                    "name": "\u65b0\u589e\u6cbb\u6108",
+                    "value": 39
+                }
+            ],
+            "radius": [
+                0,
+                50
+            ],
+            "center": [
+                "50%",
+                "60%"
+            ],
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "formatter": "{b}:{c}"
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u786e     \u8bca  ",
+                "\u6b7b     \u4ea1  ",
+                "\u6cbb     \u6108  ",
+                "\u7591     \u4f3c  ",
+                "\u65b0\u589e\u786e\u8bca",
+                "\u65b0\u589e\u7591\u4f3c",
+                "\u65b0\u589e\u6b7b\u4ea1",
+                "\u65b0\u589e\u6cbb\u6108"
+            ],
+            "selected": {},
+            "show": true,
+            "left": "0%",
+            "orient": "vertical",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "\u5168\u56fd\u603b\u91cf",
+            "subtext": "\u622a\u6b62\u81f32021-10-21 18:49:51",
+            "left": "50%",
+            "top": 0,
+            "padding": 5,
+            "itemGap": 10,
+            "textStyle": {
+                "color": "#00FFFF"
+            }
+        }
+    ]
+};
+        chart_total_pie.setOption(option_total_pie);
+    </script>
+<br/> <div class="chart-container" id="line2" style="width:605px;height:274px;position:absolute;top:0px;right:10px;"></div>
+<script>
+        var chart_line2 = echarts.init(
+            document.getElementById('line2'), 'westeros', {renderer: 'canvas'});
+        var option_line2 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "series": [
+        {
+            "type": "line",
+            "name": "\u672c\u571f\u65b0\u589e",
+            "connectNulls": false,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": true,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "2021.08.22",
+                    0
+                ],
+                [
+                    "2021.08.23",
+                    1
+                ],
+                [
+                    "2021.08.24",
+                    4
+                ],
+                [
+                    "2021.08.25",
+                    3
+                ],
+                [
+                    "2021.08.26",
+                    2
+                ],
+                [
+                    "2021.08.27",
+                    1
+                ],
+                [
+                    "2021.08.28",
+                    0
+                ],
+                [
+                    "2021.08.29",
+                    0
+                ],
+                [
+                    "2021.08.30",
+                    0
+                ],
+                [
+                    "2021.08.31",
+                    0
+                ],
+                [
+                    "2021.09.01",
+                    1
+                ],
+                [
+                    "2021.09.02",
+                    0
+                ],
+                [
+                    "2021.09.03",
+                    1
+                ],
+                [
+                    "2021.09.04",
+                    0
+                ],
+                [
+                    "2021.09.05",
+                    0
+                ],
+                [
+                    "2021.09.06",
+                    0
+                ],
+                [
+                    "2021.09.07",
+                    0
+                ],
+                [
+                    "2021.09.08",
+                    0
+                ],
+                [
+                    "2021.09.09",
+                    0
+                ],
+                [
+                    "2021.09.10",
+                    1
+                ],
+                [
+                    "2021.09.11",
+                    20
+                ],
+                [
+                    "2021.09.12",
+                    22
+                ],
+                [
+                    "2021.09.13",
+                    59
+                ],
+                [
+                    "2021.09.14",
+                    50
+                ],
+                [
+                    "2021.09.15",
+                    49
+                ],
+                [
+                    "2021.09.16",
+                    62
+                ],
+                [
+                    "2021.09.17",
+                    31
+                ],
+                [
+                    "2021.09.18",
+                    43
+                ],
+                [
+                    "2021.09.19",
+                    28
+                ],
+                [
+                    "2021.09.20",
+                    42
+                ],
+                [
+                    "2021.09.21",
+                    16
+                ],
+                [
+                    "2021.09.22",
+                    28
+                ],
+                [
+                    "2021.09.23",
+                    30
+                ],
+                [
+                    "2021.09.24",
+                    10
+                ],
+                [
+                    "2021.09.25",
+                    9
+                ],
+                [
+                    "2021.09.26",
+                    13
+                ],
+                [
+                    "2021.09.27",
+                    13
+                ],
+                [
+                    "2021.09.28",
+                    11
+                ],
+                [
+                    "2021.09.29",
+                    6
+                ],
+                [
+                    "2021.09.30",
+                    10
+                ],
+                [
+                    "2021.10.01",
+                    2
+                ],
+                [
+                    "2021.10.02",
+                    2
+                ],
+                [
+                    "2021.10.03",
+                    1
+                ],
+                [
+                    "2021.10.04",
+                    1
+                ],
+                [
+                    "2021.10.05",
+                    2
+                ],
+                [
+                    "2021.10.06",
+                    0
+                ],
+                [
+                    "2021.10.07",
+                    0
+                ],
+                [
+                    "2021.10.08",
+                    0
+                ],
+                [
+                    "2021.10.09",
+                    0
+                ],
+                [
+                    "2021.10.10",
+                    0
+                ],
+                [
+                    "2021.10.11",
+                    0
+                ],
+                [
+                    "2021.10.12",
+                    0
+                ],
+                [
+                    "2021.10.13",
+                    1
+                ],
+                [
+                    "2021.10.14",
+                    0
+                ],
+                [
+                    "2021.10.15",
+                    0
+                ],
+                [
+                    "2021.10.16",
+                    1
+                ],
+                [
+                    "2021.10.17",
+                    2
+                ],
+                [
+                    "2021.10.18",
+                    21
+                ],
+                [
+                    "2021.10.19",
+                    17
+                ],
+                [
+                    "2021.10.20",
+                    31
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0,
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        },
+        {
+            "type": "line",
+            "name": "\u5883\u5916\u8f93\u5165",
+            "connectNulls": false,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": true,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "2021.08.22",
+                    21
+                ],
+                [
+                    "2021.08.23",
+                    34
+                ],
+                [
+                    "2021.08.24",
+                    16
+                ],
+                [
+                    "2021.08.25",
+                    23
+                ],
+                [
+                    "2021.08.26",
+                    30
+                ],
+                [
+                    "2021.08.27",
+                    20
+                ],
+                [
+                    "2021.08.28",
+                    33
+                ],
+                [
+                    "2021.08.29",
+                    23
+                ],
+                [
+                    "2021.08.30",
+                    37
+                ],
+                [
+                    "2021.08.31",
+                    19
+                ],
+                [
+                    "2021.09.01",
+                    27
+                ],
+                [
+                    "2021.09.02",
+                    28
+                ],
+                [
+                    "2021.09.03",
+                    27
+                ],
+                [
+                    "2021.09.04",
+                    28
+                ],
+                [
+                    "2021.09.05",
+                    18
+                ],
+                [
+                    "2021.09.06",
+                    36
+                ],
+                [
+                    "2021.09.07",
+                    19
+                ],
+                [
+                    "2021.09.08",
+                    28
+                ],
+                [
+                    "2021.09.09",
+                    17
+                ],
+                [
+                    "2021.09.10",
+                    24
+                ],
+                [
+                    "2021.09.11",
+                    26
+                ],
+                [
+                    "2021.09.12",
+                    27
+                ],
+                [
+                    "2021.09.13",
+                    33
+                ],
+                [
+                    "2021.09.14",
+                    23
+                ],
+                [
+                    "2021.09.15",
+                    31
+                ],
+                [
+                    "2021.09.16",
+                    22
+                ],
+                [
+                    "2021.09.17",
+                    15
+                ],
+                [
+                    "2021.09.18",
+                    23
+                ],
+                [
+                    "2021.09.19",
+                    21
+                ],
+                [
+                    "2021.09.20",
+                    30
+                ],
+                [
+                    "2021.09.21",
+                    25
+                ],
+                [
+                    "2021.09.22",
+                    15
+                ],
+                [
+                    "2021.09.23",
+                    24
+                ],
+                [
+                    "2021.09.24",
+                    28
+                ],
+                [
+                    "2021.09.25",
+                    20
+                ],
+                [
+                    "2021.09.26",
+                    22
+                ],
+                [
+                    "2021.09.27",
+                    18
+                ],
+                [
+                    "2021.09.28",
+                    14
+                ],
+                [
+                    "2021.09.29",
+                    16
+                ],
+                [
+                    "2021.09.30",
+                    24
+                ],
+                [
+                    "2021.10.01",
+                    39
+                ],
+                [
+                    "2021.10.02",
+                    26
+                ],
+                [
+                    "2021.10.03",
+                    26
+                ],
+                [
+                    "2021.10.04",
+                    26
+                ],
+                [
+                    "2021.10.05",
+                    24
+                ],
+                [
+                    "2021.10.06",
+                    25
+                ],
+                [
+                    "2021.10.07",
+                    22
+                ],
+                [
+                    "2021.10.08",
+                    17
+                ],
+                [
+                    "2021.10.09",
+                    24
+                ],
+                [
+                    "2021.10.10",
+                    25
+                ],
+                [
+                    "2021.10.11",
+                    12
+                ],
+                [
+                    "2021.10.12",
+                    22
+                ],
+                [
+                    "2021.10.13",
+                    20
+                ],
+                [
+                    "2021.10.14",
+                    10
+                ],
+                [
+                    "2021.10.15",
+                    14
+                ],
+                [
+                    "2021.10.16",
+                    19
+                ],
+                [
+                    "2021.10.17",
+                    22
+                ],
+                [
+                    "2021.10.18",
+                    16
+                ],
+                [
+                    "2021.10.19",
+                    13
+                ],
+                [
+                    "2021.10.20",
+                    8
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0,
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u672c\u571f\u65b0\u589e",
+                "\u5883\u5916\u8f93\u5165"
+            ],
+            "selected": {
+                "\u672c\u571f\u65b0\u589e": true,
+                "\u5883\u5916\u8f93\u5165": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "2021.08.22",
+                "2021.08.23",
+                "2021.08.24",
+                "2021.08.25",
+                "2021.08.26",
+                "2021.08.27",
+                "2021.08.28",
+                "2021.08.29",
+                "2021.08.30",
+                "2021.08.31",
+                "2021.09.01",
+                "2021.09.02",
+                "2021.09.03",
+                "2021.09.04",
+                "2021.09.05",
+                "2021.09.06",
+                "2021.09.07",
+                "2021.09.08",
+                "2021.09.09",
+                "2021.09.10",
+                "2021.09.11",
+                "2021.09.12",
+                "2021.09.13",
+                "2021.09.14",
+                "2021.09.15",
+                "2021.09.16",
+                "2021.09.17",
+                "2021.09.18",
+                "2021.09.19",
+                "2021.09.20",
+                "2021.09.21",
+                "2021.09.22",
+                "2021.09.23",
+                "2021.09.24",
+                "2021.09.25",
+                "2021.09.26",
+                "2021.09.27",
+                "2021.09.28",
+                "2021.09.29",
+                "2021.09.30",
+                "2021.10.01",
+                "2021.10.02",
+                "2021.10.03",
+                "2021.10.04",
+                "2021.10.05",
+                "2021.10.06",
+                "2021.10.07",
+                "2021.10.08",
+                "2021.10.09",
+                "2021.10.10",
+                "2021.10.11",
+                "2021.10.12",
+                "2021.10.13",
+                "2021.10.14",
+                "2021.10.15",
+                "2021.10.16",
+                "2021.10.17",
+                "2021.10.18",
+                "2021.10.19",
+                "2021.10.20"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "text": "\u56fd\u5185\u75ab\u60c5\u589e\u52a0",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_line2.setOption(option_line2);
+    </script>
+<br/> <div class="chart-container" id="bar1" style="width:605px;height:274px;position:absolute;bottom:20px;left:0px;"></div>
+<script>
+        var chart_bar1 = echarts.init(
+            document.getElementById('bar1'), 'westeros', {renderer: 'canvas'});
+        var option_bar1 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "series": [
+        {
+            "type": "bar",
+            "name": "\u786e\u8bca",
+            "legendHoverLink": true,
+            "data": [
+                36,
+                46,
+                33,
+                32,
+                43,
+                45,
+                45,
+                53,
+                48,
+                25,
+                35,
+                33,
+                33,
+                30,
+                32,
+                54,
+                37,
+                39,
+                25,
+                37,
+                55,
+                77,
+                98,
+                80,
+                86,
+                96,
+                57,
+                77,
+                64,
+                83,
+                46,
+                51,
+                65,
+                55,
+                44,
+                51,
+                44,
+                49,
+                38,
+                44,
+                56,
+                43,
+                33,
+                39,
+                41,
+                36,
+                34,
+                17,
+                36,
+                32,
+                30,
+                30,
+                28,
+                19,
+                27,
+                37,
+                28,
+                36,
+                38,
+                47
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        },
+        {
+            "type": "bar",
+            "name": "\u7591\u4f3c",
+            "legendHoverLink": true,
+            "data": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1,
+                4,
+                1,
+                2,
+                0,
+                2,
+                2,
+                0,
+                0,
+                0,
+                1,
+                0,
+                1,
+                2,
+                0,
+                0,
+                0,
+                1,
+                0,
+                2,
+                0,
+                0,
+                2,
+                2,
+                2,
+                2,
+                1,
+                2,
+                0,
+                0,
+                0,
+                0,
+                1,
+                2,
+                0,
+                0,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        },
+        {
+            "type": "bar",
+            "name": "\u6b7b\u4ea1",
+            "legendHoverLink": true,
+            "data": [
+                0,
+                0,
+                1,
+                1,
+                2,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        },
+        {
+            "type": "bar",
+            "name": "\u6cbb\u6108",
+            "legendHoverLink": true,
+            "data": [
+                77,
+                117,
+                101,
+                113,
+                121,
+                134,
+                128,
+                108,
+                117,
+                103,
+                96,
+                71,
+                90,
+                81,
+                73,
+                48,
+                54,
+                43,
+                51,
+                54,
+                41,
+                43,
+                37,
+                50,
+                44,
+                49,
+                54,
+                54,
+                37,
+                36,
+                41,
+                42,
+                39,
+                28,
+                39,
+                37,
+                66,
+                62,
+                67,
+                50,
+                45,
+                53,
+                49,
+                33,
+                49,
+                57,
+                53,
+                40,
+                60,
+                44,
+                62,
+                49,
+                42,
+                95,
+                58,
+                31,
+                30,
+                29,
+                43,
+                39
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        },
+        {
+            "type": "line",
+            "name": "\u786e\u8bca",
+            "connectNulls": false,
+            "yAxisIndex": 1,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": true,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "2021.08.22",
+                    36
+                ],
+                [
+                    "2021.08.23",
+                    46
+                ],
+                [
+                    "2021.08.24",
+                    33
+                ],
+                [
+                    "2021.08.25",
+                    32
+                ],
+                [
+                    "2021.08.26",
+                    43
+                ],
+                [
+                    "2021.08.27",
+                    45
+                ],
+                [
+                    "2021.08.28",
+                    45
+                ],
+                [
+                    "2021.08.29",
+                    53
+                ],
+                [
+                    "2021.08.30",
+                    48
+                ],
+                [
+                    "2021.08.31",
+                    25
+                ],
+                [
+                    "2021.09.01",
+                    35
+                ],
+                [
+                    "2021.09.02",
+                    33
+                ],
+                [
+                    "2021.09.03",
+                    33
+                ],
+                [
+                    "2021.09.04",
+                    30
+                ],
+                [
+                    "2021.09.05",
+                    32
+                ],
+                [
+                    "2021.09.06",
+                    54
+                ],
+                [
+                    "2021.09.07",
+                    37
+                ],
+                [
+                    "2021.09.08",
+                    39
+                ],
+                [
+                    "2021.09.09",
+                    25
+                ],
+                [
+                    "2021.09.10",
+                    37
+                ],
+                [
+                    "2021.09.11",
+                    55
+                ],
+                [
+                    "2021.09.12",
+                    77
+                ],
+                [
+                    "2021.09.13",
+                    98
+                ],
+                [
+                    "2021.09.14",
+                    80
+                ],
+                [
+                    "2021.09.15",
+                    86
+                ],
+                [
+                    "2021.09.16",
+                    96
+                ],
+                [
+                    "2021.09.17",
+                    57
+                ],
+                [
+                    "2021.09.18",
+                    77
+                ],
+                [
+                    "2021.09.19",
+                    64
+                ],
+                [
+                    "2021.09.20",
+                    83
+                ],
+                [
+                    "2021.09.21",
+                    46
+                ],
+                [
+                    "2021.09.22",
+                    51
+                ],
+                [
+                    "2021.09.23",
+                    65
+                ],
+                [
+                    "2021.09.24",
+                    55
+                ],
+                [
+                    "2021.09.25",
+                    44
+                ],
+                [
+                    "2021.09.26",
+                    51
+                ],
+                [
+                    "2021.09.27",
+                    44
+                ],
+                [
+                    "2021.09.28",
+                    49
+                ],
+                [
+                    "2021.09.29",
+                    38
+                ],
+                [
+                    "2021.09.30",
+                    44
+                ],
+                [
+                    "2021.10.01",
+                    56
+                ],
+                [
+                    "2021.10.02",
+                    43
+                ],
+                [
+                    "2021.10.03",
+                    33
+                ],
+                [
+                    "2021.10.04",
+                    39
+                ],
+                [
+                    "2021.10.05",
+                    41
+                ],
+                [
+                    "2021.10.06",
+                    36
+                ],
+                [
+                    "2021.10.07",
+                    34
+                ],
+                [
+                    "2021.10.08",
+                    17
+                ],
+                [
+                    "2021.10.09",
+                    36
+                ],
+                [
+                    "2021.10.10",
+                    32
+                ],
+                [
+                    "2021.10.11",
+                    30
+                ],
+                [
+                    "2021.10.12",
+                    30
+                ],
+                [
+                    "2021.10.13",
+                    28
+                ],
+                [
+                    "2021.10.14",
+                    19
+                ],
+                [
+                    "2021.10.15",
+                    27
+                ],
+                [
+                    "2021.10.16",
+                    37
+                ],
+                [
+                    "2021.10.17",
+                    28
+                ],
+                [
+                    "2021.10.18",
+                    36
+                ],
+                [
+                    "2021.10.19",
+                    38
+                ],
+                [
+                    "2021.10.20",
+                    47
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0,
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        },
+        {
+            "type": "line",
+            "name": "\u7591\u4f3c",
+            "connectNulls": false,
+            "yAxisIndex": 1,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": true,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "2021.08.22",
+                    1
+                ],
+                [
+                    "2021.08.23",
+                    1
+                ],
+                [
+                    "2021.08.24",
+                    1
+                ],
+                [
+                    "2021.08.25",
+                    1
+                ],
+                [
+                    "2021.08.26",
+                    1
+                ],
+                [
+                    "2021.08.27",
+                    0
+                ],
+                [
+                    "2021.08.28",
+                    1
+                ],
+                [
+                    "2021.08.29",
+                    4
+                ],
+                [
+                    "2021.08.30",
+                    1
+                ],
+                [
+                    "2021.08.31",
+                    2
+                ],
+                [
+                    "2021.09.01",
+                    0
+                ],
+                [
+                    "2021.09.02",
+                    2
+                ],
+                [
+                    "2021.09.03",
+                    2
+                ],
+                [
+                    "2021.09.04",
+                    0
+                ],
+                [
+                    "2021.09.05",
+                    0
+                ],
+                [
+                    "2021.09.06",
+                    0
+                ],
+                [
+                    "2021.09.07",
+                    1
+                ],
+                [
+                    "2021.09.08",
+                    0
+                ],
+                [
+                    "2021.09.09",
+                    1
+                ],
+                [
+                    "2021.09.10",
+                    2
+                ],
+                [
+                    "2021.09.11",
+                    0
+                ],
+                [
+                    "2021.09.12",
+                    0
+                ],
+                [
+                    "2021.09.13",
+                    0
+                ],
+                [
+                    "2021.09.14",
+                    1
+                ],
+                [
+                    "2021.09.15",
+                    0
+                ],
+                [
+                    "2021.09.16",
+                    2
+                ],
+                [
+                    "2021.09.17",
+                    0
+                ],
+                [
+                    "2021.09.18",
+                    0
+                ],
+                [
+                    "2021.09.19",
+                    2
+                ],
+                [
+                    "2021.09.20",
+                    2
+                ],
+                [
+                    "2021.09.21",
+                    2
+                ],
+                [
+                    "2021.09.22",
+                    2
+                ],
+                [
+                    "2021.09.23",
+                    1
+                ],
+                [
+                    "2021.09.24",
+                    2
+                ],
+                [
+                    "2021.09.25",
+                    0
+                ],
+                [
+                    "2021.09.26",
+                    0
+                ],
+                [
+                    "2021.09.27",
+                    0
+                ],
+                [
+                    "2021.09.28",
+                    0
+                ],
+                [
+                    "2021.09.29",
+                    1
+                ],
+                [
+                    "2021.09.30",
+                    2
+                ],
+                [
+                    "2021.10.01",
+                    0
+                ],
+                [
+                    "2021.10.02",
+                    0
+                ],
+                [
+                    "2021.10.03",
+                    0
+                ],
+                [
+                    "2021.10.04",
+                    1
+                ],
+                [
+                    "2021.10.05",
+                    0
+                ],
+                [
+                    "2021.10.06",
+                    1
+                ],
+                [
+                    "2021.10.07",
+                    0
+                ],
+                [
+                    "2021.10.08",
+                    1
+                ],
+                [
+                    "2021.10.09",
+                    0
+                ],
+                [
+                    "2021.10.10",
+                    0
+                ],
+                [
+                    "2021.10.11",
+                    0
+                ],
+                [
+                    "2021.10.12",
+                    1
+                ],
+                [
+                    "2021.10.13",
+                    0
+                ],
+                [
+                    "2021.10.14",
+                    1
+                ],
+                [
+                    "2021.10.15",
+                    0
+                ],
+                [
+                    "2021.10.16",
+                    0
+                ],
+                [
+                    "2021.10.17",
+                    0
+                ],
+                [
+                    "2021.10.18",
+                    1
+                ],
+                [
+                    "2021.10.19",
+                    0
+                ],
+                [
+                    "2021.10.20",
+                    0
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0,
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        },
+        {
+            "type": "line",
+            "name": "\u6b7b\u4ea1",
+            "connectNulls": false,
+            "yAxisIndex": 1,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": true,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "2021.08.22",
+                    0
+                ],
+                [
+                    "2021.08.23",
+                    0
+                ],
+                [
+                    "2021.08.24",
+                    1
+                ],
+                [
+                    "2021.08.25",
+                    1
+                ],
+                [
+                    "2021.08.26",
+                    2
+                ],
+                [
+                    "2021.08.27",
+                    1
+                ],
+                [
+                    "2021.08.28",
+                    0
+                ],
+                [
+                    "2021.08.29",
+                    0
+                ],
+                [
+                    "2021.08.30",
+                    0
+                ],
+                [
+                    "2021.08.31",
+                    0
+                ],
+                [
+                    "2021.09.01",
+                    0
+                ],
+                [
+                    "2021.09.02",
+                    1
+                ],
+                [
+                    "2021.09.03",
+                    0
+                ],
+                [
+                    "2021.09.04",
+                    0
+                ],
+                [
+                    "2021.09.05",
+                    0
+                ],
+                [
+                    "2021.09.06",
+                    0
+                ],
+                [
+                    "2021.09.07",
+                    0
+                ],
+                [
+                    "2021.09.08",
+                    0
+                ],
+                [
+                    "2021.09.09",
+                    1
+                ],
+                [
+                    "2021.09.10",
+                    1
+                ],
+                [
+                    "2021.09.11",
+                    0
+                ],
+                [
+                    "2021.09.12",
+                    0
+                ],
+                [
+                    "2021.09.13",
+                    0
+                ],
+                [
+                    "2021.09.14",
+                    0
+                ],
+                [
+                    "2021.09.15",
+                    0
+                ],
+                [
+                    "2021.09.16",
+                    0
+                ],
+                [
+                    "2021.09.17",
+                    0
+                ],
+                [
+                    "2021.09.18",
+                    0
+                ],
+                [
+                    "2021.09.19",
+                    1
+                ],
+                [
+                    "2021.09.20",
+                    0
+                ],
+                [
+                    "2021.09.21",
+                    0
+                ],
+                [
+                    "2021.09.22",
+                    1
+                ],
+                [
+                    "2021.09.23",
+                    0
+                ],
+                [
+                    "2021.09.24",
+                    0
+                ],
+                [
+                    "2021.09.25",
+                    0
+                ],
+                [
+                    "2021.09.26",
+                    0
+                ],
+                [
+                    "2021.09.27",
+                    1
+                ],
+                [
+                    "2021.09.28",
+                    0
+                ],
+                [
+                    "2021.09.29",
+                    0
+                ],
+                [
+                    "2021.09.30",
+                    0
+                ],
+                [
+                    "2021.10.01",
+                    1
+                ],
+                [
+                    "2021.10.02",
+                    0
+                ],
+                [
+                    "2021.10.03",
+                    0
+                ],
+                [
+                    "2021.10.04",
+                    1
+                ],
+                [
+                    "2021.10.05",
+                    0
+                ],
+                [
+                    "2021.10.06",
+                    0
+                ],
+                [
+                    "2021.10.07",
+                    0
+                ],
+                [
+                    "2021.10.08",
+                    1
+                ],
+                [
+                    "2021.10.09",
+                    1
+                ],
+                [
+                    "2021.10.10",
+                    0
+                ],
+                [
+                    "2021.10.11",
+                    0
+                ],
+                [
+                    "2021.10.12",
+                    0
+                ],
+                [
+                    "2021.10.13",
+                    0
+                ],
+                [
+                    "2021.10.14",
+                    0
+                ],
+                [
+                    "2021.10.15",
+                    0
+                ],
+                [
+                    "2021.10.16",
+                    0
+                ],
+                [
+                    "2021.10.17",
+                    0
+                ],
+                [
+                    "2021.10.18",
+                    0
+                ],
+                [
+                    "2021.10.19",
+                    0
+                ],
+                [
+                    "2021.10.20",
+                    0
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0,
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        },
+        {
+            "type": "line",
+            "name": "\u6cbb\u6108",
+            "connectNulls": false,
+            "yAxisIndex": 1,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": true,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "2021.08.22",
+                    77
+                ],
+                [
+                    "2021.08.23",
+                    117
+                ],
+                [
+                    "2021.08.24",
+                    101
+                ],
+                [
+                    "2021.08.25",
+                    113
+                ],
+                [
+                    "2021.08.26",
+                    121
+                ],
+                [
+                    "2021.08.27",
+                    134
+                ],
+                [
+                    "2021.08.28",
+                    128
+                ],
+                [
+                    "2021.08.29",
+                    108
+                ],
+                [
+                    "2021.08.30",
+                    117
+                ],
+                [
+                    "2021.08.31",
+                    103
+                ],
+                [
+                    "2021.09.01",
+                    96
+                ],
+                [
+                    "2021.09.02",
+                    71
+                ],
+                [
+                    "2021.09.03",
+                    90
+                ],
+                [
+                    "2021.09.04",
+                    81
+                ],
+                [
+                    "2021.09.05",
+                    73
+                ],
+                [
+                    "2021.09.06",
+                    48
+                ],
+                [
+                    "2021.09.07",
+                    54
+                ],
+                [
+                    "2021.09.08",
+                    43
+                ],
+                [
+                    "2021.09.09",
+                    51
+                ],
+                [
+                    "2021.09.10",
+                    54
+                ],
+                [
+                    "2021.09.11",
+                    41
+                ],
+                [
+                    "2021.09.12",
+                    43
+                ],
+                [
+                    "2021.09.13",
+                    37
+                ],
+                [
+                    "2021.09.14",
+                    50
+                ],
+                [
+                    "2021.09.15",
+                    44
+                ],
+                [
+                    "2021.09.16",
+                    49
+                ],
+                [
+                    "2021.09.17",
+                    54
+                ],
+                [
+                    "2021.09.18",
+                    54
+                ],
+                [
+                    "2021.09.19",
+                    37
+                ],
+                [
+                    "2021.09.20",
+                    36
+                ],
+                [
+                    "2021.09.21",
+                    41
+                ],
+                [
+                    "2021.09.22",
+                    42
+                ],
+                [
+                    "2021.09.23",
+                    39
+                ],
+                [
+                    "2021.09.24",
+                    28
+                ],
+                [
+                    "2021.09.25",
+                    39
+                ],
+                [
+                    "2021.09.26",
+                    37
+                ],
+                [
+                    "2021.09.27",
+                    66
+                ],
+                [
+                    "2021.09.28",
+                    62
+                ],
+                [
+                    "2021.09.29",
+                    67
+                ],
+                [
+                    "2021.09.30",
+                    50
+                ],
+                [
+                    "2021.10.01",
+                    45
+                ],
+                [
+                    "2021.10.02",
+                    53
+                ],
+                [
+                    "2021.10.03",
+                    49
+                ],
+                [
+                    "2021.10.04",
+                    33
+                ],
+                [
+                    "2021.10.05",
+                    49
+                ],
+                [
+                    "2021.10.06",
+                    57
+                ],
+                [
+                    "2021.10.07",
+                    53
+                ],
+                [
+                    "2021.10.08",
+                    40
+                ],
+                [
+                    "2021.10.09",
+                    60
+                ],
+                [
+                    "2021.10.10",
+                    44
+                ],
+                [
+                    "2021.10.11",
+                    62
+                ],
+                [
+                    "2021.10.12",
+                    49
+                ],
+                [
+                    "2021.10.13",
+                    42
+                ],
+                [
+                    "2021.10.14",
+                    95
+                ],
+                [
+                    "2021.10.15",
+                    58
+                ],
+                [
+                    "2021.10.16",
+                    31
+                ],
+                [
+                    "2021.10.17",
+                    30
+                ],
+                [
+                    "2021.10.18",
+                    29
+                ],
+                [
+                    "2021.10.19",
+                    43
+                ],
+                [
+                    "2021.10.20",
+                    39
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0,
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u786e\u8bca",
+                "\u7591\u4f3c",
+                "\u6b7b\u4ea1",
+                "\u6cbb\u6108",
+                "\u786e\u8bca",
+                "\u7591\u4f3c",
+                "\u6b7b\u4ea1",
+                "\u6cbb\u6108"
+            ],
+            "selected": {
+                "\u786e\u8bca": true,
+                "\u7591\u4f3c": true,
+                "\u6b7b\u4ea1": true,
+                "\u6cbb\u6108": true
+            },
+            "show": true,
+            "left": "center",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "2021.08.22",
+                "2021.08.23",
+                "2021.08.24",
+                "2021.08.25",
+                "2021.08.26",
+                "2021.08.27",
+                "2021.08.28",
+                "2021.08.29",
+                "2021.08.30",
+                "2021.08.31",
+                "2021.09.01",
+                "2021.09.02",
+                "2021.09.03",
+                "2021.09.04",
+                "2021.09.05",
+                "2021.09.06",
+                "2021.09.07",
+                "2021.09.08",
+                "2021.09.09",
+                "2021.09.10",
+                "2021.09.11",
+                "2021.09.12",
+                "2021.09.13",
+                "2021.09.14",
+                "2021.09.15",
+                "2021.09.16",
+                "2021.09.17",
+                "2021.09.18",
+                "2021.09.19",
+                "2021.09.20",
+                "2021.09.21",
+                "2021.09.22",
+                "2021.09.23",
+                "2021.09.24",
+                "2021.09.25",
+                "2021.09.26",
+                "2021.09.27",
+                "2021.09.28",
+                "2021.09.29",
+                "2021.09.30",
+                "2021.10.01",
+                "2021.10.02",
+                "2021.10.03",
+                "2021.10.04",
+                "2021.10.05",
+                "2021.10.06",
+                "2021.10.07",
+                "2021.10.08",
+                "2021.10.09",
+                "2021.10.10",
+                "2021.10.11",
+                "2021.10.12",
+                "2021.10.13",
+                "2021.10.14",
+                "2021.10.15",
+                "2021.10.16",
+                "2021.10.17",
+                "2021.10.18",
+                "2021.10.19",
+                "2021.10.20"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "formatter": "{value}"
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        },
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "formatter": "{value}"
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "text": "\u6bcf\u65e5\u65b0\u589e\u6570\u636e\u8d8b\u52bf",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "dataZoom": {
+        "show": true,
+        "type": "slider",
+        "realtime": true,
+        "start": 20,
+        "end": 80,
+        "orient": "horizontal",
+        "zoomLock": false,
+        "filterMode": "filter"
+    }
+};
+        chart_bar1.setOption(option_bar1);
+    </script>
+<br/> <div class="chart-container" id="line3" style="width:605px;height:274px;position:absolute;bottom:20px;right:0px;"></div>
+<script>
+        var chart_line3 = echarts.init(
+            document.getElementById('line3'), 'westeros', {renderer: 'canvas'});
+        var option_line3 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "series": [
+        {
+            "type": "line",
+            "name": "\u6cbb\u6108\u7387",
+            "connectNulls": false,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": true,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "2021.08.22",
+                    92.7
+                ],
+                [
+                    "2021.08.23",
+                    92.7
+                ],
+                [
+                    "2021.08.24",
+                    92.8
+                ],
+                [
+                    "2021.08.25",
+                    92.9
+                ],
+                [
+                    "2021.08.26",
+                    92.9
+                ],
+                [
+                    "2021.08.27",
+                    93.0
+                ],
+                [
+                    "2021.08.28",
+                    93.1
+                ],
+                [
+                    "2021.08.29",
+                    93.1
+                ],
+                [
+                    "2021.08.30",
+                    93.2
+                ],
+                [
+                    "2021.08.31",
+                    93.3
+                ],
+                [
+                    "2021.09.01",
+                    93.3
+                ],
+                [
+                    "2021.09.02",
+                    93.3
+                ],
+                [
+                    "2021.09.03",
+                    93.4
+                ],
+                [
+                    "2021.09.04",
+                    93.4
+                ],
+                [
+                    "2021.09.05",
+                    93.5
+                ],
+                [
+                    "2021.09.06",
+                    93.5
+                ],
+                [
+                    "2021.09.07",
+                    93.5
+                ],
+                [
+                    "2021.09.08",
+                    93.5
+                ],
+                [
+                    "2021.09.09",
+                    93.5
+                ],
+                [
+                    "2021.09.10",
+                    93.5
+                ],
+                [
+                    "2021.09.11",
+                    93.5
+                ],
+                [
+                    "2021.09.12",
+                    93.5
+                ],
+                [
+                    "2021.09.13",
+                    93.5
+                ],
+                [
+                    "2021.09.14",
+                    93.4
+                ],
+                [
+                    "2021.09.15",
+                    93.4
+                ],
+                [
+                    "2021.09.16",
+                    93.4
+                ],
+                [
+                    "2021.09.17",
+                    93.4
+                ],
+                [
+                    "2021.09.18",
+                    93.4
+                ],
+                [
+                    "2021.09.19",
+                    93.3
+                ],
+                [
+                    "2021.09.20",
+                    93.3
+                ],
+                [
+                    "2021.09.21",
+                    93.3
+                ],
+                [
+                    "2021.09.22",
+                    93.3
+                ],
+                [
+                    "2021.09.23",
+                    93.3
+                ],
+                [
+                    "2021.09.24",
+                    93.3
+                ],
+                [
+                    "2021.09.25",
+                    93.3
+                ],
+                [
+                    "2021.09.26",
+                    93.3
+                ],
+                [
+                    "2021.09.27",
+                    93.3
+                ],
+                [
+                    "2021.09.28",
+                    93.3
+                ],
+                [
+                    "2021.09.29",
+                    93.3
+                ],
+                [
+                    "2021.09.30",
+                    93.3
+                ],
+                [
+                    "2021.10.01",
+                    93.3
+                ],
+                [
+                    "2021.10.02",
+                    93.3
+                ],
+                [
+                    "2021.10.03",
+                    93.3
+                ],
+                [
+                    "2021.10.04",
+                    93.3
+                ],
+                [
+                    "2021.10.05",
+                    93.3
+                ],
+                [
+                    "2021.10.06",
+                    93.4
+                ],
+                [
+                    "2021.10.07",
+                    93.4
+                ],
+                [
+                    "2021.10.08",
+                    93.4
+                ],
+                [
+                    "2021.10.09",
+                    93.4
+                ],
+                [
+                    "2021.10.10",
+                    93.4
+                ],
+                [
+                    "2021.10.11",
+                    93.4
+                ],
+                [
+                    "2021.10.12",
+                    93.5
+                ],
+                [
+                    "2021.10.13",
+                    93.5
+                ],
+                [
+                    "2021.10.14",
+                    93.5
+                ],
+                [
+                    "2021.10.15",
+                    93.6
+                ],
+                [
+                    "2021.10.16",
+                    93.6
+                ],
+                [
+                    "2021.10.17",
+                    93.6
+                ],
+                [
+                    "2021.10.18",
+                    93.6
+                ],
+                [
+                    "2021.10.19",
+                    93.6
+                ],
+                [
+                    "2021.10.20",
+                    93.6
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0,
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        },
+        {
+            "type": "line",
+            "name": "\u6b7b\u4ea1\u7387",
+            "connectNulls": false,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": true,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "2021.08.22",
+                    4.6
+                ],
+                [
+                    "2021.08.23",
+                    4.6
+                ],
+                [
+                    "2021.08.24",
+                    4.6
+                ],
+                [
+                    "2021.08.25",
+                    4.6
+                ],
+                [
+                    "2021.08.26",
+                    4.6
+                ],
+                [
+                    "2021.08.27",
+                    4.6
+                ],
+                [
+                    "2021.08.28",
+                    4.6
+                ],
+                [
+                    "2021.08.29",
+                    4.6
+                ],
+                [
+                    "2021.08.30",
+                    4.6
+                ],
+                [
+                    "2021.08.31",
+                    4.6
+                ],
+                [
+                    "2021.09.01",
+                    4.6
+                ],
+                [
+                    "2021.09.02",
+                    4.6
+                ],
+                [
+                    "2021.09.03",
+                    4.6
+                ],
+                [
+                    "2021.09.04",
+                    4.6
+                ],
+                [
+                    "2021.09.05",
+                    4.6
+                ],
+                [
+                    "2021.09.06",
+                    4.6
+                ],
+                [
+                    "2021.09.07",
+                    4.6
+                ],
+                [
+                    "2021.09.08",
+                    4.6
+                ],
+                [
+                    "2021.09.09",
+                    4.6
+                ],
+                [
+                    "2021.09.10",
+                    4.6
+                ],
+                [
+                    "2021.09.11",
+                    4.6
+                ],
+                [
+                    "2021.09.12",
+                    4.6
+                ],
+                [
+                    "2021.09.13",
+                    4.6
+                ],
+                [
+                    "2021.09.14",
+                    4.6
+                ],
+                [
+                    "2021.09.15",
+                    4.6
+                ],
+                [
+                    "2021.09.16",
+                    4.6
+                ],
+                [
+                    "2021.09.17",
+                    4.6
+                ],
+                [
+                    "2021.09.18",
+                    4.6
+                ],
+                [
+                    "2021.09.19",
+                    4.6
+                ],
+                [
+                    "2021.09.20",
+                    4.6
+                ],
+                [
+                    "2021.09.21",
+                    4.6
+                ],
+                [
+                    "2021.09.22",
+                    4.6
+                ],
+                [
+                    "2021.09.23",
+                    4.6
+                ],
+                [
+                    "2021.09.24",
+                    4.6
+                ],
+                [
+                    "2021.09.25",
+                    4.6
+                ],
+                [
+                    "2021.09.26",
+                    4.6
+                ],
+                [
+                    "2021.09.27",
+                    4.6
+                ],
+                [
+                    "2021.09.28",
+                    4.6
+                ],
+                [
+                    "2021.09.29",
+                    4.6
+                ],
+                [
+                    "2021.09.30",
+                    4.6
+                ],
+                [
+                    "2021.10.01",
+                    4.6
+                ],
+                [
+                    "2021.10.02",
+                    4.6
+                ],
+                [
+                    "2021.10.03",
+                    4.6
+                ],
+                [
+                    "2021.10.04",
+                    4.6
+                ],
+                [
+                    "2021.10.05",
+                    4.6
+                ],
+                [
+                    "2021.10.06",
+                    4.6
+                ],
+                [
+                    "2021.10.07",
+                    4.6
+                ],
+                [
+                    "2021.10.08",
+                    4.6
+                ],
+                [
+                    "2021.10.09",
+                    4.6
+                ],
+                [
+                    "2021.10.10",
+                    4.6
+                ],
+                [
+                    "2021.10.11",
+                    4.6
+                ],
+                [
+                    "2021.10.12",
+                    4.6
+                ],
+                [
+                    "2021.10.13",
+                    4.6
+                ],
+                [
+                    "2021.10.14",
+                    4.6
+                ],
+                [
+                    "2021.10.15",
+                    4.5
+                ],
+                [
+                    "2021.10.16",
+                    4.5
+                ],
+                [
+                    "2021.10.17",
+                    4.5
+                ],
+                [
+                    "2021.10.18",
+                    4.5
+                ],
+                [
+                    "2021.10.19",
+                    4.5
+                ],
+                [
+                    "2021.10.20",
+                    4.5
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0,
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u6cbb\u6108\u7387",
+                "\u6b7b\u4ea1\u7387"
+            ],
+            "selected": {
+                "\u6cbb\u6108\u7387": true,
+                "\u6b7b\u4ea1\u7387": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "2021.08.22",
+                "2021.08.23",
+                "2021.08.24",
+                "2021.08.25",
+                "2021.08.26",
+                "2021.08.27",
+                "2021.08.28",
+                "2021.08.29",
+                "2021.08.30",
+                "2021.08.31",
+                "2021.09.01",
+                "2021.09.02",
+                "2021.09.03",
+                "2021.09.04",
+                "2021.09.05",
+                "2021.09.06",
+                "2021.09.07",
+                "2021.09.08",
+                "2021.09.09",
+                "2021.09.10",
+                "2021.09.11",
+                "2021.09.12",
+                "2021.09.13",
+                "2021.09.14",
+                "2021.09.15",
+                "2021.09.16",
+                "2021.09.17",
+                "2021.09.18",
+                "2021.09.19",
+                "2021.09.20",
+                "2021.09.21",
+                "2021.09.22",
+                "2021.09.23",
+                "2021.09.24",
+                "2021.09.25",
+                "2021.09.26",
+                "2021.09.27",
+                "2021.09.28",
+                "2021.09.29",
+                "2021.09.30",
+                "2021.10.01",
+                "2021.10.02",
+                "2021.10.03",
+                "2021.10.04",
+                "2021.10.05",
+                "2021.10.06",
+                "2021.10.07",
+                "2021.10.08",
+                "2021.10.09",
+                "2021.10.10",
+                "2021.10.11",
+                "2021.10.12",
+                "2021.10.13",
+                "2021.10.14",
+                "2021.10.15",
+                "2021.10.16",
+                "2021.10.17",
+                "2021.10.18",
+                "2021.10.19",
+                "2021.10.20"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "text": "\u56fd\u5185\u6cbb\u6108\u7387\u4e0e\u6b7b\u4ea1\u7387",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_line3.setOption(option_line3);
+    </script>
+<br/> </div>
+<script>
+</script>
+</body>
+</html>

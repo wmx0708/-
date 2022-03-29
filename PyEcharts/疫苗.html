@@ -1,0 +1,2412 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>疫苗接种情况展示</title>
+<script src="https://assets.pyecharts.org/assets/echarts.min.js" type="text/javascript"></script>
+<script src="https://assets.pyecharts.org/assets/maps/world.js" type="text/javascript"></script>
+<script src="https://assets.pyecharts.org/assets/echarts-liquidfill.min.js" type="text/javascript"></script>
+<script src="https://assets.pyecharts.org/assets/themes/westeros.js" type="text/javascript"></script>
+<script src="https://assets.pyecharts.org/assets/jquery.min.js" type="text/javascript"></script>
+<script src="https://assets.pyecharts.org/assets/jquery-ui.min.js" type="text/javascript"></script>
+<script src="https://assets.pyecharts.org/assets/ResizeSensor.js" type="text/javascript"></script>
+<link href="https://assets.pyecharts.org/assets/jquery-ui.css" rel="stylesheet"/>
+</head>
+<body>
+<style>.box {  }; </style>
+<div class="box">
+<div class="chart-container" id="worldVaccine_map" style="position: absolute; width: 619px; height: 319px; top: 78px; left: 309.00002098083496px;"></div>
+<script>
+        var chart_worldVaccine_map = echarts.init(
+            document.getElementById('worldVaccine_map'), 'white', {renderer: 'canvas'});
+        var option_worldVaccine_map = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "map",
+            "name": "\u4e16\u754c",
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "mapType": "world",
+            "data": [
+                {
+                    "name": "China",
+                    "value": 2238325000
+                },
+                {
+                    "name": "India",
+                    "value": 997399032
+                },
+                {
+                    "name": "United States",
+                    "value": 410189737
+                },
+                {
+                    "name": "Brazil",
+                    "value": 259937358
+                },
+                {
+                    "name": "Japan",
+                    "value": 182719236
+                },
+                {
+                    "name": "Indonesia",
+                    "value": 174419558
+                },
+                {
+                    "name": "Turkey",
+                    "value": 114620510
+                },
+                {
+                    "name": "Mexico",
+                    "value": 112996000
+                },
+                {
+                    "name": "Germany",
+                    "value": 110432440
+                },
+                {
+                    "name": "Russia",
+                    "value": 99382776
+                },
+                {
+                    "name": "Pskistan",
+                    "value": 98607708
+                },
+                {
+                    "name": "France",
+                    "value": 97546405
+                },
+                {
+                    "name": "United Kingdom",
+                    "value": 94939084
+                },
+                {
+                    "name": "Italy",
+                    "value": 87564480
+                },
+                {
+                    "name": "Korea(republic of)",
+                    "value": 73716800
+                },
+                {
+                    "name": "Spain",
+                    "value": 71102258
+                },
+                {
+                    "name": "Vietnam",
+                    "value": 67083557
+                },
+                {
+                    "name": "Thailand",
+                    "value": 64139022
+                },
+                {
+                    "name": "Canada",
+                    "value": 57893268
+                },
+                {
+                    "name": "Argentina",
+                    "value": 56722315
+                },
+                {
+                    "name": "Philippines",
+                    "value": 53838248
+                },
+                {
+                    "name": "Malaysia",
+                    "value": 48437608
+                },
+                {
+                    "name": "Saudi Arabia",
+                    "value": 44950769
+                },
+                {
+                    "name": "Morocco",
+                    "value": 44867769
+                },
+                {
+                    "name": "Colombia",
+                    "value": 44731300
+                },
+                {
+                    "name": "Poland",
+                    "value": 38439839
+                },
+                {
+                    "name": "Chile",
+                    "value": 34188420
+                },
+                {
+                    "name": "Australia",
+                    "value": 33489485
+                },
+                {
+                    "name": "Peru",
+                    "value": 32057273
+                },
+                {
+                    "name": "Sri Lanka",
+                    "value": 27627779
+                },
+                {
+                    "name": "Cuba",
+                    "value": 24839602
+                },
+                {
+                    "name": "Uzbekistan",
+                    "value": 24300975
+                },
+                {
+                    "name": "Netherlands",
+                    "value": 23858776
+                },
+                {
+                    "name": "Ecuador",
+                    "value": 21492532
+                },
+                {
+                    "name": "South Africa",
+                    "value": 20580832
+                },
+                {
+                    "name": "Egypt",
+                    "value": 20154366
+                },
+                {
+                    "name": "Belgium",
+                    "value": 16784208
+                },
+                {
+                    "name": "Portugal",
+                    "value": 16163885
+                },
+                {
+                    "name": "Venezuela",
+                    "value": 16127242
+                },
+                {
+                    "name": "Israel",
+                    "value": 15795763
+                },
+                {
+                    "name": "Kazakhstan",
+                    "value": 15281564
+                },
+                {
+                    "name": "Ukraine",
+                    "value": 15117165
+                },
+                {
+                    "name": "Nepal",
+                    "value": 14885262
+                },
+                {
+                    "name": "Sweden",
+                    "value": 14251895
+                },
+                {
+                    "name": "Algeria",
+                    "value": 14082920
+                },
+                {
+                    "name": "Greece",
+                    "value": 12477519
+                },
+                {
+                    "name": "HunGary",
+                    "value": 12111107
+                },
+                {
+                    "name": "Czech",
+                    "value": 11928131
+                },
+                {
+                    "name": "Rumania",
+                    "value": 11306239
+                },
+                {
+                    "name": "Austria",
+                    "value": 11261939
+                },
+                {
+                    "name": "Switzerland",
+                    "value": 10834279
+                },
+                {
+                    "name": "Singapore",
+                    "value": 9912343
+                },
+                {
+                    "name": "Azerbaijan",
+                    "value": 9257472
+                },
+                {
+                    "name": "Myanmar",
+                    "value": 9001616
+                },
+                {
+                    "name": "Denmark",
+                    "value": 8822233
+                },
+                {
+                    "name": "Tunisia",
+                    "value": 8747863
+                },
+                {
+                    "name": "Iraq",
+                    "value": 8506934
+                },
+                {
+                    "name": "El Salvador",
+                    "value": 8178337
+                },
+                {
+                    "name": "Guatemala",
+                    "value": 8167013
+                },
+                {
+                    "name": "Nigeria",
+                    "value": 8029702
+                },
+                {
+                    "name": "Finland",
+                    "value": 7930260
+                },
+                {
+                    "name": "Norway",
+                    "value": 7904644
+                },
+                {
+                    "name": "Ireland",
+                    "value": 7286277
+                },
+                {
+                    "name": "Jordan",
+                    "value": 7283306
+                },
+                {
+                    "name": "Bolivia",
+                    "value": 6931689
+                },
+                {
+                    "name": "Uruguay",
+                    "value": 6510088
+                },
+                {
+                    "name": "New Zealand",
+                    "value": 6474746
+                },
+                {
+                    "name": "Costa Rica",
+                    "value": 6124445
+                },
+                {
+                    "name": "Honduras",
+                    "value": 6058428
+                },
+                {
+                    "name": "Zimbabwe",
+                    "value": 5780767
+                },
+                {
+                    "name": "Panama",
+                    "value": 5364077
+                },
+                {
+                    "name": "Oman",
+                    "value": 5254466
+                },
+                {
+                    "name": "Angola",
+                    "value": 5224697
+                },
+                {
+                    "name": "Paraguay",
+                    "value": 4926677
+                },
+                {
+                    "name": "Qatar",
+                    "value": 4799513
+                },
+                {
+                    "name": "Slovak",
+                    "value": 4774493
+                },
+                {
+                    "name": "Kenya",
+                    "value": 4674897
+                },
+                {
+                    "name": "Rwanda",
+                    "value": 4646977
+                },
+                {
+                    "name": "Laos",
+                    "value": 4402770
+                },
+                {
+                    "name": "Mongolia",
+                    "value": 4391183
+                },
+                {
+                    "name": "Tajikistan",
+                    "value": 4362853
+                },
+                {
+                    "name": "Ethiopia",
+                    "value": 4048361
+                },
+                {
+                    "name": "Mozambique",
+                    "value": 3677063
+                },
+                {
+                    "name": "Croatian",
+                    "value": 3530290
+                },
+                {
+                    "name": "Lithuania",
+                    "value": 3328523
+                },
+                {
+                    "name": "Lebanon",
+                    "value": 3161543
+                },
+                {
+                    "name": "Uganda",
+                    "value": 2793657
+                },
+                {
+                    "name": "Bahrain",
+                    "value": 2723459
+                },
+                {
+                    "name": "Bulgaria",
+                    "value": 2643788
+                },
+                {
+                    "name": "Belarus",
+                    "value": 2541745
+                },
+                {
+                    "name": "Ivory Coast",
+                    "value": 2433705
+                },
+                {
+                    "name": "Kuwait",
+                    "value": 2375455
+                },
+                {
+                    "name": "Slovenia",
+                    "value": 2284040
+                },
+                {
+                    "name": "Ghana",
+                    "value": 2189552
+                },
+                {
+                    "name": "Guinea",
+                    "value": 2039569
+                },
+                {
+                    "name": "Afghanistan",
+                    "value": 1979652
+                },
+                {
+                    "name": "Senegal",
+                    "value": 1959198
+                },
+                {
+                    "name": "Georgia",
+                    "value": 1920934
+                },
+                {
+                    "name": "Albania",
+                    "value": 1842661
+                },
+                {
+                    "name": "Latvia",
+                    "value": 1804344
+                },
+                {
+                    "name": "Libya",
+                    "value": 1799014
+                },
+                {
+                    "name": "Mauritius",
+                    "value": 1713794
+                },
+                {
+                    "name": "Kyrgyzstan",
+                    "value": 1637317
+                },
+                {
+                    "name": "Sudan",
+                    "value": 1499982
+                },
+                {
+                    "name": "Moldova",
+                    "value": 1472843
+                },
+                {
+                    "name": "Estonia",
+                    "value": 1407091
+                },
+                {
+                    "name": "Mauritania",
+                    "value": 1300831
+                },
+                {
+                    "name": "Togo",
+                    "value": 1215025
+                },
+                {
+                    "name": "Cyprus",
+                    "value": 1201394
+                },
+                {
+                    "name": "Trinidad and Tobago",
+                    "value": 1188698
+                },
+                {
+                    "name": "Malawi",
+                    "value": 1153801
+                },
+                {
+                    "name": "Fiji",
+                    "value": 1136909
+                },
+                {
+                    "name": "Bhutan",
+                    "value": 1045074
+                },
+                {
+                    "name": "Nicaragua",
+                    "value": 999990
+                },
+                {
+                    "name": "Syria",
+                    "value": 902519
+                },
+                {
+                    "name": "Jamaica",
+                    "value": 879843
+                },
+                {
+                    "name": "Zambia",
+                    "value": 859618
+                },
+                {
+                    "name": "Malta",
+                    "value": 858858
+                },
+                {
+                    "name": "Luxembourg",
+                    "value": 806150
+                },
+                {
+                    "name": "Botswana",
+                    "value": 783999
+                },
+                {
+                    "name": "Maldive",
+                    "value": 744848
+                },
+                {
+                    "name": "Niger",
+                    "value": 646086
+                },
+                {
+                    "name": "Somali",
+                    "value": 635822
+                },
+                {
+                    "name": "Guyana",
+                    "value": 596526
+                },
+                {
+                    "name": "Mali",
+                    "value": 584773
+                },
+                {
+                    "name": "Iceland",
+                    "value": 562426
+                },
+                {
+                    "name": "Tanzania",
+                    "value": 560938
+                },
+                {
+                    "name": "Armenia",
+                    "value": 514241
+                },
+                {
+                    "name": "Namibia",
+                    "value": 495048
+                },
+                {
+                    "name": "Cameroon",
+                    "value": 490604
+                },
+                {
+                    "name": "Cape Verde",
+                    "value": 472436
+                },
+                {
+                    "name": "Suriname",
+                    "value": 433870
+                },
+                {
+                    "name": "Equatorial Guinea",
+                    "value": 422768
+                },
+                {
+                    "name": "Comoro",
+                    "value": 407792
+                },
+                {
+                    "name": "Lesotho",
+                    "value": 383341
+                },
+                {
+                    "name": "Madagascar",
+                    "value": 381633
+                },
+                {
+                    "name": "Yemen",
+                    "value": 356173
+                },
+                {
+                    "name": "Belize",
+                    "value": 344463
+                },
+                {
+                    "name": "Gambia",
+                    "value": 316363
+                },
+                {
+                    "name": "Burkinafaso",
+                    "value": 297231
+                },
+                {
+                    "name": "Swaziland",
+                    "value": 270643
+                },
+                {
+                    "name": "Barbados",
+                    "value": 263548
+                },
+                {
+                    "name": "Benin",
+                    "value": 252698
+                },
+                {
+                    "name": "Gabon",
+                    "value": 206373
+                },
+                {
+                    "name": "Chad",
+                    "value": 199516
+                },
+                {
+                    "name": "Papua New Guinea",
+                    "value": 194962
+                },
+                {
+                    "name": "Solomon Is.",
+                    "value": 141920
+                },
+                {
+                    "name": "Seychelles",
+                    "value": 141435
+                },
+                {
+                    "name": "Guinea-bissau",
+                    "value": 121501
+                },
+                {
+                    "name": "Antigua and Barbuda",
+                    "value": 102834
+                },
+                {
+                    "name": "San.Tome And Principe",
+                    "value": 102791
+                },
+                {
+                    "name": "Liberia",
+                    "value": 93617
+                },
+                {
+                    "name": "Djibouti",
+                    "value": 92097
+                },
+                {
+                    "name": "Vanuatu",
+                    "value": 87583
+                },
+                {
+                    "name": "St.Lucia",
+                    "value": 87446
+                },
+                {
+                    "name": "Andorra",
+                    "value": 82349
+                },
+                {
+                    "name": "Grenada",
+                    "value": 62095
+                },
+                {
+                    "name": "Haiti",
+                    "value": 61545
+                },
+                {
+                    "name": "Monaco",
+                    "value": 49980
+                },
+                {
+                    "name": "San.Marino",
+                    "value": 47100
+                }
+            ],
+            "roam": true,
+            "aspectScale": 0.75,
+            "nameProperty": "name",
+            "selectedMode": false,
+            "zoom": 1,
+            "mapValueCalculation": "sum",
+            "showLegendSymbol": true,
+            "emphasis": {},
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u4e16\u754c"
+            ],
+            "selected": {
+                "\u4e16\u754c": true
+            },
+            "show": true,
+            "right": "20%",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "\u4e16\u754c\uff08162\u4e2a\u56fd\u5bb6\uff09\u75ab\u82d7\u63a5\u79cd\u5730\u56fe\uff08\u75ab\u82d7\u603b\u63a5\u79cd\u6570\uff09",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "visualMap": {
+        "show": true,
+        "type": "continuous",
+        "min": 100000000,
+        "max": 0,
+        "inRange": {
+            "color": [
+                "#50a3ba",
+                "#eac763",
+                "#d94e5d"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "orient": "vertical",
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 140,
+        "borderWidth": 0
+    }
+};
+        chart_worldVaccine_map.setOption(option_worldVaccine_map);
+    </script>
+<br/> <div class="chart-container" id="funnel" style="position: absolute; width: 359px; height: 555px; top: 18.666667938232422px; left: -21.000001907348633px;"></div>
+<script>
+        var chart_funnel = echarts.init(
+            document.getElementById('funnel'), 'white', {renderer: 'canvas'});
+        var option_funnel = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "funnel",
+            "name": "\u5168\u7403\u75ab\u82d7\u603b\u63a5\u79cd\u6570",
+            "data": [
+                {
+                    "name": "China",
+                    "value": 2238325000
+                },
+                {
+                    "name": "India",
+                    "value": 997399032
+                },
+                {
+                    "name": "United States",
+                    "value": 410189737
+                },
+                {
+                    "name": "Brazil",
+                    "value": 259937358
+                },
+                {
+                    "name": "Japan",
+                    "value": 182719236
+                },
+                {
+                    "name": "Indonesia",
+                    "value": 174419558
+                },
+                {
+                    "name": "Turkey",
+                    "value": 114620510
+                },
+                {
+                    "name": "Mexico",
+                    "value": 112996000
+                },
+                {
+                    "name": "Germany",
+                    "value": 110432440
+                },
+                {
+                    "name": "Russia",
+                    "value": 99382776
+                }
+            ],
+            "sort": "ascending",
+            "gap": 0,
+            "label": {
+                "show": true,
+                "position": "inside",
+                "margin": 8
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "Japan",
+                "Russia",
+                "India",
+                "Indonesia",
+                "Mexico",
+                "Germany",
+                "China",
+                "Brazil",
+                "Turkey",
+                "United States"
+            ],
+            "selected": {
+                "China": true,
+                "India": true,
+                "United States": true,
+                "Brazil": true,
+                "Japan": true,
+                "Indonesia": true,
+                "Turkey": true,
+                "Mexico": true,
+                "Germany": true,
+                "Russia": true
+            }
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    }
+};
+        chart_funnel.setOption(option_funnel);
+    </script>
+<br/> <div class="chart-container" id="line6" style="position: absolute; width: 352px; height: 250px; top: 295.3333435058594px; left: 892.000020980835px;"></div>
+<script>
+        var chart_line6 = echarts.init(
+            document.getElementById('line6'), 'westeros', {renderer: 'canvas'});
+        var option_line6 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "series": [
+        {
+            "type": "line",
+            "name": "\n\n\u5168\u56fd\u75ab\u82d7\u603b\u63a5\u79cd\u6570\uff08\u5343\u4e07\uff09",
+            "connectNulls": false,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": true,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "2021.08.22",
+                    194.6954
+                ],
+                [
+                    "2021.08.23",
+                    196.1893
+                ],
+                [
+                    "2021.08.24",
+                    197.5738
+                ],
+                [
+                    "2021.08.25",
+                    198.8433
+                ],
+                [
+                    "2021.08.26",
+                    200.3914
+                ],
+                [
+                    "2021.08.27",
+                    201.9549
+                ],
+                [
+                    "2021.08.28",
+                    203.2934
+                ],
+                [
+                    "2021.08.29",
+                    204.4625
+                ],
+                [
+                    "2021.08.30",
+                    205.5966
+                ],
+                [
+                    "2021.08.31",
+                    206.7589
+                ],
+                [
+                    "2021.09.01",
+                    207.6428
+                ],
+                [
+                    "2021.09.02",
+                    208.465
+                ],
+                [
+                    "2021.09.03",
+                    209.2174
+                ],
+                [
+                    "2021.09.04",
+                    210.0387
+                ],
+                [
+                    "2021.09.05",
+                    210.7445
+                ],
+                [
+                    "2021.09.06",
+                    211.3083
+                ],
+                [
+                    "2021.09.07",
+                    211.9025
+                ],
+                [
+                    "2021.09.08",
+                    212.4582
+                ],
+                [
+                    "2021.09.09",
+                    212.9833
+                ],
+                [
+                    "2021.09.10",
+                    213.524
+                ],
+                [
+                    "2021.09.11",
+                    214.258
+                ],
+                [
+                    "2021.09.12",
+                    214.812
+                ],
+                [
+                    "2021.09.13",
+                    215.252
+                ],
+                [
+                    "2021.09.14",
+                    215.6938
+                ],
+                [
+                    "2021.09.15",
+                    216.1428
+                ],
+                [
+                    "2021.09.16",
+                    216.5679
+                ],
+                [
+                    "2021.09.17",
+                    217.0017
+                ],
+                [
+                    "2021.09.18",
+                    217.4043
+                ],
+                [
+                    "2021.09.19",
+                    217.7638
+                ],
+                [
+                    "2021.09.20",
+                    218.0986
+                ],
+                [
+                    "2021.09.21",
+                    218.2604
+                ],
+                [
+                    "2021.09.22",
+                    218.6583
+                ],
+                [
+                    "2021.09.23",
+                    219.0792
+                ],
+                [
+                    "2021.09.24",
+                    219.4467
+                ],
+                [
+                    "2021.09.25",
+                    219.7689
+                ],
+                [
+                    "2021.09.26",
+                    220.0202
+                ],
+                [
+                    "2021.09.27",
+                    220.3185
+                ],
+                [
+                    "2021.09.28",
+                    220.6054
+                ],
+                [
+                    "2021.09.29",
+                    220.8921
+                ],
+                [
+                    "2021.09.30",
+                    221.1452
+                ],
+                [
+                    "2021.10.01",
+                    221.2206
+                ],
+                [
+                    "2021.10.02",
+                    221.2961
+                ],
+                [
+                    "2021.10.03",
+                    221.3691
+                ],
+                [
+                    "2021.10.04",
+                    221.4564
+                ],
+                [
+                    "2021.10.05",
+                    221.5428
+                ],
+                [
+                    "2021.10.06",
+                    221.6382
+                ],
+                [
+                    "2021.10.07",
+                    221.7563
+                ],
+                [
+                    "2021.10.08",
+                    221.8826
+                ],
+                [
+                    "2021.10.09",
+                    222.0128
+                ],
+                [
+                    "2021.10.10",
+                    222.1245
+                ],
+                [
+                    "2021.10.11",
+                    222.2666
+                ],
+                [
+                    "2021.10.12",
+                    222.4081
+                ],
+                [
+                    "2021.10.13",
+                    222.5504
+                ],
+                [
+                    "2021.10.14",
+                    222.7334
+                ],
+                [
+                    "2021.10.15",
+                    222.9212
+                ],
+                [
+                    "2021.10.16",
+                    223.0567
+                ],
+                [
+                    "2021.10.17",
+                    223.2088
+                ],
+                [
+                    "2021.10.18",
+                    223.4096
+                ],
+                [
+                    "2021.10.19",
+                    223.6226
+                ],
+                [
+                    "2021.10.20",
+                    223.8325
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\n\n\u5168\u56fd\u75ab\u82d7\u603b\u63a5\u79cd\u6570\uff08\u5343\u4e07\uff09"
+            ],
+            "selected": {
+                "\n\n\u5168\u56fd\u75ab\u82d7\u603b\u63a5\u79cd\u6570\uff08\u5343\u4e07\uff09": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "2021.08.22",
+                "2021.08.23",
+                "2021.08.24",
+                "2021.08.25",
+                "2021.08.26",
+                "2021.08.27",
+                "2021.08.28",
+                "2021.08.29",
+                "2021.08.30",
+                "2021.08.31",
+                "2021.09.01",
+                "2021.09.02",
+                "2021.09.03",
+                "2021.09.04",
+                "2021.09.05",
+                "2021.09.06",
+                "2021.09.07",
+                "2021.09.08",
+                "2021.09.09",
+                "2021.09.10",
+                "2021.09.11",
+                "2021.09.12",
+                "2021.09.13",
+                "2021.09.14",
+                "2021.09.15",
+                "2021.09.16",
+                "2021.09.17",
+                "2021.09.18",
+                "2021.09.19",
+                "2021.09.20",
+                "2021.09.21",
+                "2021.09.22",
+                "2021.09.23",
+                "2021.09.24",
+                "2021.09.25",
+                "2021.09.26",
+                "2021.09.27",
+                "2021.09.28",
+                "2021.09.29",
+                "2021.09.30",
+                "2021.10.01",
+                "2021.10.02",
+                "2021.10.03",
+                "2021.10.04",
+                "2021.10.05",
+                "2021.10.06",
+                "2021.10.07",
+                "2021.10.08",
+                "2021.10.09",
+                "2021.10.10",
+                "2021.10.11",
+                "2021.10.12",
+                "2021.10.13",
+                "2021.10.14",
+                "2021.10.15",
+                "2021.10.16",
+                "2021.10.17",
+                "2021.10.18",
+                "2021.10.19",
+                "2021.10.20"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "middle",
+            "nameGap": 30,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "text": "\u5168\u56fd\u6bcf\u65e5\u75ab\u82d7\u63a5\u79cd\u8d8b\u52bf",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_line6.setOption(option_line6);
+    </script>
+<br/> <div class="chart-container" id="china_total_vaccinations_per_hundred" style="width:220px;height:31px;position:absolute;top:22px;left:920px;border-top:3px solid #000;background:#CCC; border-radius:25px 0px 0px 0px;"></div>
+<script>
+        var chart_china_total_vaccinations_per_hundred = echarts.init(
+            document.getElementById('china_total_vaccinations_per_hundred'), 'white', {renderer: 'canvas'});
+        var option_china_total_vaccinations_per_hundred = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [],
+    "legend": [
+        {
+            "data": [],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "\u6211\u56fd\u6bcf\u767e\u4eba\u75ab\u82d7\u603b\u63a5\u79cd\u6570",
+            "left": "center",
+            "top": "center",
+            "padding": 5,
+            "itemGap": 10,
+            "textStyle": {
+                "color": "#000000"
+            }
+        }
+    ]
+};
+        chart_china_total_vaccinations_per_hundred.setOption(option_china_total_vaccinations_per_hundred);
+    </script>
+<br/> <div class="chart-container" id="china_total_vaccinations_per_hundred_num" style="width:220px;height:62px;position:absolute;top:56px;left:920px;border-style:solid;border-color:black;border-width:3px;background:#AAA"></div>
+<script>
+        var chart_china_total_vaccinations_per_hundred_num = echarts.init(
+            document.getElementById('china_total_vaccinations_per_hundred_num'), 'white', {renderer: 'canvas'});
+        var option_china_total_vaccinations_per_hundred_num = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [],
+    "legend": [
+        {
+            "data": [],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "155.51   ",
+            "subtext": "\u65b0\u589e\u75ab\u82d7\u63a5\u79cd\u6570: 2099000",
+            "left": "center",
+            "top": "15%",
+            "padding": 5,
+            "itemGap": 1,
+            "textStyle": {
+                "color": "#FFFFFF",
+                "fontSize": 30
+            },
+            "subtextStyle": {
+                "color": "#FFFFFF"
+            }
+        }
+    ]
+};
+        chart_china_total_vaccinations_per_hundred_num.setOption(option_china_total_vaccinations_per_hundred_num);
+    </script>
+<br/> <div class="chart-container" id="world_total_vaccinations_per_hundred" style="width:220px;height:31px;position:absolute;top:121px;left:920px;border-style:solid;border-color:#DC143C;border-width:3px;background:#CCC"></div>
+<script>
+        var chart_world_total_vaccinations_per_hundred = echarts.init(
+            document.getElementById('world_total_vaccinations_per_hundred'), 'white', {renderer: 'canvas'});
+        var option_world_total_vaccinations_per_hundred = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [],
+    "legend": [
+        {
+            "data": [],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "\u5168\u7403\u6bcf\u767e\u4eba\u75ab\u82d7\u603b\u63a5\u79cd\u6570",
+            "left": "center",
+            "top": "center",
+            "padding": 5,
+            "itemGap": 10,
+            "textStyle": {
+                "color": "#000000",
+                "borderColor": "#000000",
+                "borderWidth": 4,
+                "borderRadius": [
+                    25,
+                    0,
+                    0,
+                    0
+                ]
+            }
+        }
+    ]
+};
+        chart_world_total_vaccinations_per_hundred.setOption(option_world_total_vaccinations_per_hundred);
+    </script>
+<br/> <div class="chart-container" id="world_total_vaccinations_per_hundred_num" style="width:220px;height:62px;position:absolute;top:155px;left:920px;border-style:solid;border-color:#DC143C;border-width:3px;background:	#AAA;border-radius:0px 0px 25px 0px;"></div>
+<script>
+        var chart_world_total_vaccinations_per_hundred_num = echarts.init(
+            document.getElementById('world_total_vaccinations_per_hundred_num'), 'white', {renderer: 'canvas'});
+        var option_world_total_vaccinations_per_hundred_num = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [],
+    "legend": [
+        {
+            "data": [],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "85.82   ",
+            "subtext": "\u65b0\u589e\u75ab\u82d7\u63a5\u79cd\u6570: 27745262",
+            "left": "center",
+            "top": "15%",
+            "padding": 5,
+            "itemGap": 1,
+            "textStyle": {
+                "color": "#FFFFFF",
+                "fontSize": 30
+            },
+            "subtextStyle": {
+                "color": "#FFFFFF"
+            }
+        }
+    ]
+};
+        chart_world_total_vaccinations_per_hundred_num.setOption(option_world_total_vaccinations_per_hundred_num);
+    </script>
+<br/> <div class="chart-container" id="page4_title" style="position: absolute; width: 286px; height: 50px; top: 25.666667938232422px; left: 377.00002098083496px;"></div>
+<script>
+        var chart_page4_title = echarts.init(
+            document.getElementById('page4_title'), 'white', {renderer: 'canvas'});
+        var option_page4_title = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [],
+    "legend": [
+        {
+            "data": [],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "2021-\u75ab\u82d7\u63a5\u79cd",
+            "top": 0,
+            "padding": 5,
+            "itemGap": 10,
+            "textStyle": {
+                "color": "#000",
+                "fontSize": 40,
+                "borderColor": "white",
+                "borderRadius": true
+            }
+        }
+    ]
+};
+        chart_page4_title.setOption(option_page4_title);
+    </script>
+<br/> <div class="chart-container" id="times" style="position: absolute; width: 181px; height: 35px; top: 40.333335876464844px; left: 675.000020980835px;"></div>
+<script>
+        var chart_times = echarts.init(
+            document.getElementById('times'), 'white', {renderer: 'canvas'});
+        var option_times = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [],
+    "legend": [
+        {
+            "data": [],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "subtext": "\u622a\u81f3 2021-10-21 18:49:51",
+            "top": 0,
+            "padding": 5,
+            "itemGap": 10,
+            "subtextStyle": {
+                "color": "#000",
+                "fontSize": 13
+            }
+        }
+    ]
+};
+        chart_times.setOption(option_times);
+    </script>
+<br/> <div class="chart-container" id="lq1" style="position: absolute; width: 100px; height: 140px; top: 385px; left: 308.00002098083496px;"></div>
+<script>
+        var chart_lq1 = echarts.init(
+            document.getElementById('lq1'), 'white', {renderer: 'canvas'});
+        var option_lq1 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "liquidFill",
+            "name": "China",
+            "data": [
+                0.33120674064879646
+            ],
+            "waveAnimation": true,
+            "animationDuration": 2000,
+            "animationDurationUpdate": 1000,
+            "color": [
+                "#c23531"
+            ],
+            "shape": "circle",
+            "backgroundStyle": {
+                "color": "#ff9966"
+            },
+            "outline": {
+                "show": true,
+                "borderDistance": 8,
+                "itemStyle": {
+                    "color": "#ff9966"
+                }
+            },
+            "label": {
+                "show": true,
+                "position": "inside",
+                "color": "#c23531",
+                "margin": 8,
+                "fontSize": 15,
+                "borderColor": "#c23531"
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "China",
+            "left": "center",
+            "bottom": "0%",
+            "padding": 5,
+            "itemGap": 10,
+            "textStyle": {
+                "color": "#c23531",
+                "fontSize": 20
+            }
+        }
+    ]
+};
+        chart_lq1.setOption(option_lq1);
+    </script>
+<br/> <div class="chart-container" id="lq2" style="position: absolute; width: 100px; height: 140px; top: 415px; left: 464.00002098083496px;"></div>
+<script>
+        var chart_lq2 = echarts.init(
+            document.getElementById('lq2'), 'white', {renderer: 'canvas'});
+        var option_lq2 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "liquidFill",
+            "name": "India",
+            "data": [
+                0.14758593256787314
+            ],
+            "waveAnimation": true,
+            "animationDuration": 2000,
+            "animationDurationUpdate": 1000,
+            "color": [
+                "#2f4554"
+            ],
+            "shape": "circle",
+            "backgroundStyle": {
+                "color": "#99CCFF"
+            },
+            "outline": {
+                "show": true,
+                "borderDistance": 8,
+                "itemStyle": {
+                    "color": "#99CCFF"
+                }
+            },
+            "label": {
+                "show": true,
+                "position": "inside",
+                "color": "#2f4554",
+                "margin": 8,
+                "fontSize": 15,
+                "borderColor": "#c23531"
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "India",
+            "left": "center",
+            "bottom": "0%",
+            "padding": 5,
+            "itemGap": 10,
+            "textStyle": {
+                "color": "#2f4554",
+                "fontSize": 20
+            }
+        }
+    ]
+};
+        chart_lq2.setOption(option_lq2);
+    </script>
+<br/> <div class="chart-container" id="lq3" style="position: absolute; width: 100px; height: 140px; top: 385px; left: 623.000020980835px;"></div>
+<script>
+        var chart_lq3 = echarts.init(
+            document.getElementById('lq3'), 'white', {renderer: 'canvas'});
+        var option_lq3 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "liquidFill",
+            "name": "United States",
+            "data": [
+                0.060696103487812104
+            ],
+            "waveAnimation": true,
+            "animationDuration": 2000,
+            "animationDurationUpdate": 1000,
+            "color": [
+                "#61a0a8"
+            ],
+            "shape": "circle",
+            "backgroundStyle": {
+                "color": "#F0FFFF"
+            },
+            "outline": {
+                "show": true,
+                "borderDistance": 8,
+                "itemStyle": {
+                    "color": "#F0FFFF"
+                }
+            },
+            "label": {
+                "show": true,
+                "position": "inside",
+                "color": "#61a0a8",
+                "margin": 8,
+                "fontSize": 15,
+                "borderColor": "#c23531"
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "United\nStates",
+            "left": "center",
+            "bottom": "-6%",
+            "padding": 5,
+            "itemGap": 10,
+            "textStyle": {
+                "color": "#61a0a8",
+                "fontSize": 20
+            }
+        }
+    ]
+};
+        chart_lq3.setOption(option_lq3);
+    </script>
+<br/> <div class="chart-container" id="lq4" style="position: absolute; width: 100px; height: 140px; top: 415px; left: 779.000020980835px;"></div>
+<script>
+        var chart_lq4 = echarts.init(
+            document.getElementById('lq4'), 'white', {renderer: 'canvas'});
+        var option_lq4 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "liquidFill",
+            "name": "Brazil",
+            "data": [
+                0.03846313878281275
+            ],
+            "waveAnimation": true,
+            "animationDuration": 2000,
+            "animationDurationUpdate": 1000,
+            "color": [
+                "#D48265"
+            ],
+            "shape": "circle",
+            "backgroundStyle": {
+                "color": "#FFD39B"
+            },
+            "outline": {
+                "show": true,
+                "borderDistance": 8,
+                "itemStyle": {
+                    "color": "#FFD39B"
+                }
+            },
+            "label": {
+                "show": true,
+                "position": "inside",
+                "color": "#D48265",
+                "margin": 8,
+                "fontSize": 15,
+                "borderColor": "#c23531"
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "Brazil",
+            "left": "center",
+            "bottom": "0%",
+            "padding": 5,
+            "itemGap": 10,
+            "textStyle": {
+                "color": "#FFD39B",
+                "fontSize": 20
+            }
+        }
+    ]
+};
+        chart_lq4.setOption(option_lq4);
+    </script>
+<br/> </div>
+<script>
+            $('#worldVaccine_map').css('border-style', 'dashed').css('border-width', '0px');$("#worldVaccine_map>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#worldVaccine_map'), function() { chart_worldVaccine_map.resize()});
+            $('#funnel').css('border-style', 'dashed').css('border-width', '0px');$("#funnel>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#funnel'), function() { chart_funnel.resize()});
+            $('#line6').css('border-style', 'dashed').css('border-width', '0px');$("#line6>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#line6'), function() { chart_line6.resize()});
+            $('#china_total_vaccinations_per_hundred').css('border-style', 'dashed').css('border-width', '0px');$("#china_total_vaccinations_per_hundred>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#china_total_vaccinations_per_hundred'), function() { chart_china_total_vaccinations_per_hundred.resize()});
+            $('#china_total_vaccinations_per_hundred_num').css('border-style', 'dashed').css('border-width', '0px');$("#china_total_vaccinations_per_hundred_num>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#china_total_vaccinations_per_hundred_num'), function() { chart_china_total_vaccinations_per_hundred_num.resize()});
+            $('#world_total_vaccinations_per_hundred').css('border-style', 'dashed').css('border-width', '0px');$("#world_total_vaccinations_per_hundred>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#world_total_vaccinations_per_hundred'), function() { chart_world_total_vaccinations_per_hundred.resize()});
+            $('#world_total_vaccinations_per_hundred_num').css('border-style', 'dashed').css('border-width', '0px');$("#world_total_vaccinations_per_hundred_num>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#world_total_vaccinations_per_hundred_num'), function() { chart_world_total_vaccinations_per_hundred_num.resize()});
+            $('#page4_title').css('border-style', 'dashed').css('border-width', '0px');$("#page4_title>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#page4_title'), function() { chart_page4_title.resize()});
+            $('#times').css('border-style', 'dashed').css('border-width', '0px');$("#times>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#times'), function() { chart_times.resize()});
+            $('#lq1').css('border-style', 'dashed').css('border-width', '0px');$("#lq1>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#lq1'), function() { chart_lq1.resize()});
+            $('#lq2').css('border-style', 'dashed').css('border-width', '0px');$("#lq2>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#lq2'), function() { chart_lq2.resize()});
+            $('#lq3').css('border-style', 'dashed').css('border-width', '0px');$("#lq3>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#lq3'), function() { chart_lq3.resize()});
+            $('#lq4').css('border-style', 'dashed').css('border-width', '0px');$("#lq4>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#lq4'), function() { chart_lq4.resize()});
+            var charts_id = ['worldVaccine_map','funnel','line6','china_total_vaccinations_per_hundred','china_total_vaccinations_per_hundred_num','world_total_vaccinations_per_hundred','world_total_vaccinations_per_hundred_num','page4_title','times','lq1','lq2','lq3','lq4'];
+function downloadCfg () {
+    const fileName = 'chart_config.json'
+    let downLink = document.createElement('a')
+    downLink.download = fileName
+
+    let result = []
+    for(let i=0; i<charts_id.length; i++) {
+        chart = $('#'+charts_id[i])
+        result.push({
+            cid: charts_id[i],
+            width: chart.css("width"),
+            height: chart.css("height"),
+            top: chart.offset().top + "px",
+            left: chart.offset().left + "px"
+        })
+    }
+
+    let blob = new Blob([JSON.stringify(result)])
+    downLink.href = URL.createObjectURL(blob)
+    document.body.appendChild(downLink)
+    downLink.click()
+    document.body.removeChild(downLink)
+}
+    </script>
+</body>
+</html>
